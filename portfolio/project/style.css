@@ -1,0 +1,531 @@
+/* Retro Black and White Theme */
+:root {
+    --black: #000000;
+    --white: #ffffff;
+    --gray: #333333;
+    --light-gray: #aaaaaa;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Press Start 2P', cursive;
+    background-color: var(--black);
+    color: var(--white);
+    line-height: 1.6;
+    background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 0h1L0 6V5zm1 5v1H5z' fill='%23333' fill-opacity='.4' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Scanlines effect */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.03) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    background-size: 100% 4px;
+    z-index: 1000;
+    pointer-events: none;
+    opacity: 0.15;
+}
+
+/* Navigation */
+nav {
+    background-color: var(--black);
+    border-bottom: 2px solid var(--white);
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    color: var(--white);
+    font-size: 1.5rem;
+    text-transform: lowercase;
+    letter-spacing: -2px;
+    padding: 2px 6px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-links a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 0.7rem;
+    transition: all 0.2s ease;
+    text-transform: lowercase;
+    position: relative;
+}
+
+.nav-links a:hover {
+    color: var(--black);
+    background-color: var(--white);
+    padding: 2px 4px;
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--white);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    transform: scaleX(1);
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    height: 3px;
+    width: 100%;
+    background-color: var(--white);
+    border-radius: 1px;
+}
+
+/* Sections */
+section {
+    padding: 120px 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px dashed var(--light-gray);
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    text-transform: lowercase;
+    letter-spacing: 2px;
+    position: relative;
+    display: inline-block;
+    padding: 0 10px;
+}
+
+h2::before {
+    content: ">";
+    position: absolute;
+    left: -15px;
+    color: var(--white);
+}
+
+/* Home Section */
+#home {
+    text-align: center;
+}
+
+.glitch {
+    font-size: 2.5rem;
+    position: relative;
+    margin-bottom: 1.5rem;
+    text-transform: lowercase;
+    letter-spacing: 2px;
+}
+
+.glitch::before,
+.glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.glitch::before {
+    left: 2px;
+    text-shadow: -2px 0 var(--white);
+    clip: rect(24px, 550px, 90px, 0);
+    animation: glitch-anim 3s infinite linear alternate-reverse;
+}
+
+.glitch::after {
+    left: -2px;
+    text-shadow: -2px 0 var(--light-gray);
+    clip: rect(85px, 550px, 140px, 0);
+    animation: glitch-anim 2s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim {
+    0% {
+        clip: rect(24px, 550px, 90px, 0);
+    }
+    20% {
+        clip: rect(85px, 550px, 140px, 0);
+    }
+    40% {
+        clip: rect(66px, 550px, 130px, 0);
+    }
+    60% {
+        clip: rect(42px, 550px, 80px, 0);
+    }
+    80% {
+        clip: rect(15px, 550px, 75px, 0);
+    }
+    100% {
+        clip: rect(53px, 550px, 120px, 0);
+    }
+}
+
+.subtitle {
+    font-size: 0.8rem;
+    margin-bottom: 2rem;
+    text-transform: lowercase;
+    letter-spacing: 1px;
+    color: var(--light-gray);
+}
+
+/* Terminal */
+.terminal {
+    background-color: var(--black);
+    border: 2px solid var(--white);
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.terminal-header {
+    background-color: var(--white);
+    padding: 8px;
+    display: flex;
+    gap: 8px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--black);
+    border: 1px solid var(--gray);
+}
+
+.terminal-content {
+    padding: 20px;
+    color: var(--white);
+    border-top: 1px solid var(--white);
+}
+
+.line {
+    display: flex;
+    gap: 10px;
+}
+
+.prompt {
+    color: var(--white);
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Projects & Companies Grid */
+.projects-grid,
+.companies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.project-card,
+.company-card {
+    background-color: var(--black);
+    color: var(--white);
+    padding: 1.5rem;
+    border: 2px solid var(--white);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.project-card::before,
+.company-card::before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 100%;
+    height: 100%;
+    border: 1px dashed var(--light-gray);
+    z-index: -1;
+    transition: all 0.3s ease;
+}
+
+.project-card:hover,
+.company-card:hover {
+    transform: translate(-5px, -5px);
+    box-shadow: 5px 5px 0 var(--white);
+}
+
+.project-card:hover::before,
+.company-card:hover::before {
+    transform: translate(10px, 10px);
+}
+
+.project-card h3,
+.company-card h3,
+.blog-post h3 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    text-transform: lowercase;
+    letter-spacing: 1px;
+    border-bottom: 1px solid var(--white);
+    padding-bottom: 0.5rem;
+}
+
+.tech-stack {
+    margin-top: 1rem;
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.tech-stack span {
+    background-color: var(--white);
+    color: var(--black);
+    padding: 0.25rem 0.5rem;
+    font-size: 0.6rem;
+    text-transform: lowercase;
+    letter-spacing: 1px;
+}
+
+/* Blog Grid */
+.blog-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+.blog-post {
+    background-color: var(--black);
+    color: var(--white);
+    padding: 2rem;
+    border: 2px solid var(--white);
+    transition: all 0.3s ease;
+    position: relative;
+    cursor: pointer;
+}
+
+.blog-post::before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 100%;
+    height: 100%;
+    border: 1px dashed var(--light-gray);
+    z-index: -1;
+    transition: all 0.3s ease;
+}
+
+.blog-post:hover {
+    transform: translate(-5px, -5px);
+    box-shadow: 5px 5px 0 var(--white);
+}
+
+.blog-post:hover::before {
+    transform: translate(10px, 10px);
+}
+
+.blog-post .date {
+    color: var(--light-gray);
+    font-size: 0.6rem;
+    margin: 0.5rem 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.read-more {
+    display: inline-block;
+    margin-top: 1rem;
+    font-size: 0.7rem;
+    color: var(--white);
+    text-decoration: none;
+    border: 1px solid var(--white);
+    padding: 0.5rem 1rem;
+    transition: all 0.2s ease;
+}
+
+.read-more:hover {
+    background-color: var(--white);
+    color: var(--black);
+}
+
+/* Blog Detail Page */
+.blog-detail {
+    padding-top: 120px;
+    min-height: 100vh;
+}
+
+.blog-header {
+    margin-bottom: 2rem;
+    border-bottom: 1px dashed var(--light-gray);
+    padding-bottom: 1rem;
+}
+
+.blog-header h1 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    text-transform: lowercase;
+    letter-spacing: 1px;
+}
+
+.blog-content {
+    line-height: 1.8;
+    font-size: 0.8rem;
+    margin-bottom: 2rem;
+}
+
+.blog-content p {
+    margin-bottom: 1.5rem;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 2rem;
+    font-size: 0.7rem;
+    color: var(--white);
+    text-decoration: none;
+    border: 1px solid var(--white);
+    padding: 0.5rem 1rem;
+    transition: all 0.2s ease;
+}
+
+.back-link:hover {
+    background-color: var(--white);
+    color: var(--black);
+}
+
+/* Footer */
+footer {
+    background-color: var(--black);
+    color: var(--white);
+    text-align: center;
+    padding: 2rem 0;
+    font-size: 0.7rem;
+    border-top: 2px solid var(--white);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+    
+    .nav-links {
+        position: fixed;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: var(--black);
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem 0;
+        gap: 1rem;
+        border-bottom: 2px solid var(--white);
+        transform: translateY(-100%);
+        transition: transform 0.3s ease;
+        z-index: 999;
+    }
+    
+    .nav-links.active {
+        transform: translateY(0);
+    }
+    
+    .glitch {
+        font-size: 1.8rem;
+    }
+    
+    .subtitle {
+        font-size: 0.7rem;
+    }
+    
+    .project-card,
+    .company-card,
+    .blog-post {
+        padding: 1rem;
+    }
+    
+    section {
+        padding: 100px 0 60px;
+    }
+    
+    .blog-header h1 {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .glitch {
+        font-size: 1.4rem;
+    }
+    
+    h2 {
+        font-size: 1.2rem;
+    }
+    
+    .terminal {
+        max-width: 100%;
+    }
+    
+    .projects-grid,
+    .companies-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Custom cursor */
+html {
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cpath fill='white' d='M0,0 L5,0 L5,1 L1,1 L1,5 L0,5 L0,0 Z M15,0 L16,0 L16,5 L15,5 L15,1 L11,1 L11,0 L15,0 Z M0,11 L1,11 L1,15 L5,15 L5,16 L0,16 L0,11 Z M15,11 L16,11 L16,16 L11,16 L11,15 L15,15 L15,11 Z'/%3E%3C/svg%3E"), auto;
+}
+
+a, button, .project-card, .company-card, .blog-post {
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cpath fill='white' d='M8,0 L16,8 L13,8 L13,16 L3,16 L3,8 L0,8 L8,0 Z'/%3E%3C/svg%3E"), pointer;
+}

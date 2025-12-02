@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faizan L. Khan</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 15px;
+            font-family: 'Space Mono', monospace;
+            line-height: 1.6;
+            color: #111;
+            letter-spacing: -0.01em; 
+        }
+
+        body, nav a, .link-group a, p, li {
+            font-size: 16px; 
+        }
+
+        h1, h2, h3 {
+            font-family: 'Space Mono', monospace;
+            font-weight: 700;
+        }
+        
+        header {
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #000;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background: #ccc;
+            margin: 20px 0;
+        }
+
+        .home-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .profile-pic {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #ccc;
+        }
+        
+        .home-header h1 {
+            font-size: 2.2em;
+            margin: 0;
+        }
+
+        h2 {
+            margin-top: 20px;
+            margin-bottom: 5px; 
+        }
+        
+        h3 {
+            margin-top: 15px;
+            margin-bottom: 3px; 
+        }
+
+        section p, section ul {
+            margin-top: 5px; 
+        }
+        
+        ul {
+            padding-left: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .home-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            .home-header div {
+                text-align: center;
+            }
+            .home-header h1 {
+                font-size: 1.5em;
+            }
+        }
+
+        .link-group a {
+            margin-right: 15px;
+            text-decoration: none;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="#home">Home</a> |
+            <a href="#research">Research</a> |
+            <a href="#projects">Projects</a>
+        </nav>
+        <hr>
+    </header>
+
+    <section id="home">
+        <div class="home-header">
+            <img 
+                src="pic.jpeg" 
+                alt="Faizan L. Khan Profile Picture" 
+                class="profile-pic"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+            >
+            <noscript>
+                [Profile Picture Placeholder]
+            </noscript>
+
+            <div>
+                <h1>Faizan Laique Khan</h1>
+                <p>Aspiring AI & ML developer, focused on building impactful real-world applications.</p>
+            </div>
+        </div>
+        <hr>
+    </section>
+
+    <section id="research">
+        <h2>Research</h2>
+        
+        <h3>Learning Adaptive Feature-Weight Optimization and Landing-Site Prediction for Lunar Surface Exploration Using Reinforcement Learning</h3>
+        <ul>
+            <li>Built a PPO-based RL model to learn adaptive feature weights on a 5058×5058 lunar grid, replacing fixed MCDM weighting.</li>
+            <li>Improved suitability-prediction stability and consistency by 18–22% over baseline methods. </li>
+            <li>Generated 60m suitability and AI-weight maps and extracted top landing zones via 95th-percentile filtering.</li>
+            <li>Achieved stable convergence (~10⁴ steps) with mean suitability/reward 0.74 and max suitability 0.9066.</li>
+            <li>Implemented complete preprocessing: normalization, raster harmonization, slope/hazard inversion, and geospatial outputs.</li>
+        </ul>
+
+        <div class="link-group">
+            <a href="https://github.com/faizanlkhan/Moon_Landing_Site_Selection_ML.git" target="_blank">[Source Code]</a> 
+        </div>
+
+        <hr>
+    </section>
+
+    <section id="projects">
+        <h2>Projects & Hackathons</h2>
+        
+        <h3>TerraVision - Terrain Analysis Platform (Anveshan 2024 Hackathon)</h3>
+        <p>Built a SaaS platform for terrain analysis & visualization using GeoTIFF files, featuring 2D/3D elevation maps, erosion risk mapping, and contour generation. Selected among top 5 university teams for South Zone (Bengaluru).</p>
+        
+        <h3>Land Registry on Blockchain (InnovateX 3.0 Hackathon)</h3>
+        <p>Developed a decentralized land registry MVP using a smart contract deployed on the Sepolia testnet, ensuring secure land ownership with integrated KYC and NFT ownership transfer.</p>
+        
+        <h3>Terrain Analysis Tool (College Competition Project)</h3>
+        <p>Early version of TerraVision developed for a university-wide competition, achieving a Top 70 ranking out of 500 teams.</p>
+        <br>
+        
+        <h3>Mini Frontend Projects</h3>
+        <ul>
+            <li>
+                <strong>Hex Code Guessing Game</strong>
+                <div class="link-group">
+                    <a href="https://hexcodeguesser.vercel.app/" target="_blank">[Play Game]</a>
+                    <a href="https://github.com/faizanlkhan/HexCode-Guesser.git" target="_blank">[Source Code]</a>
+                </div>
+            </li>
+            <li>
+                <strong>Snake Game</strong>
+                <div class="link-group">
+                    <a href="https://snake-game-five-hazel.vercel.app" target="_blank">[Play Game]</a>
+                    <a href="https://github.com/faizanlkhan/Snake-Game.git" target="_blank">[Source Code]</a>
+                </div>
+            </li>
+            <li>
+                <strong>Weather App</strong>
+                <div class="link-group">
+                    <a href="https://weather-app-blues.vercel.app/" target="_blank">[View Project]</a>
+                    <a href="https://github.com/faizanlkhan/WeatherApp.git" target="_blank">[Source Code]</a>
+                </div>
+            </li>
+            <li>
+                <strong>Dictionary App</strong>
+                <div class="link-group">
+                    <a href="https://dictionary-app-five-amber.vercel.app" target="_blank">[View Project]</a>
+                    <a href="https://github.com/faizanlkhan/DictionaryApp.git" target="_blank">[Source Code]</a>
+                </div>
+            </li>
+        </ul>
+        <br>
+
+        <h3>ML Mini Projects</h3>
+        <ul>
+            <li>Image Classification (Cats vs Dogs or MNIST)</li>
+            <li>House Price Prediction (Linear Regression)</li>
+        </ul>
+        <hr>
+    </section>
+
+    <footer>
+        <p style="text-align: center;"> 
+            <a href="https://github.com/faizanlkhan" target="_blank">GitHub</a> | 
+            <a href="https://www.linkedin.com/in/faizanlkhan" target="_blank">LinkedIn</a>
+        </p>
+        <p style="text-align: center; font-size: 0.8em; color: #555;">
+            &copy; 2025 Faizan L. Khan.
+        </p>
+    </footer>
+
+</body>
+</html>

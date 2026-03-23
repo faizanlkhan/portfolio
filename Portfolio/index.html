@@ -131,7 +131,7 @@
 
             <div>
                 <h1>Faizan Laique Khan</h1>
-                <p>Aspiring AI & ML developer, focused on building impactful real-world applications.</p>
+                <p>CS undergraduate specializing in AI & ML, with hands-on experience in reinforcement learning, NLP, and computer vision. Focused on efficient vision systems and practical AI for perception and decision-making.</p>
             </div>
         </div>
         <hr>
@@ -150,23 +150,65 @@
         </ul>
 
         <div class="link-group">
-            <a href="https://github.com/faizanlkhan/Moon_Landing_Site_Selection_ML.git" target="_blank">[Source Code]</a> 
+            <a href="https://www.researchgate.net/publication/399913944_Learning_Adaptive_Feature-Weight_Optimization_and_Landing-Site_Prediction_for_Lunar_Surface_Exploration_Using_Reinforcement_Learning" target="_blank">[Preprint]</a>
+            <a href="https://github.com/faizanlkhan/Moon_Landing_Site_Selection_ML" target="_blank">[Source Code]</a> 
         </div>
 
         <hr>
     </section>
 
     <section id="projects">
-        <h2>Projects & Hackathons</h2>
+        <h2>Projects</h2>
+
+        <h3>Real-Time Driver Drowsiness Detection with Temporal Alert System</h3>
+        <ul>
+            <li>Developed a real-time drowsiness detection system using YOLOv5 & OpenCV for webcam-based inference.</li>
+            <li>Collected and annotated a custom dataset (~200+ images) using LabelImg for supervised object detection (awake vs drowsy).</li>
+            <li>Trained a YOLOv5 model (80 epochs, batch size 8), achieving mAP@0.5 ≈ 0.99 and mAP@0.5:0.95 ≈ 0.80+.</li>
+            <li>Implemented temporal filtering using consecutive frame analysis to reduce false positives and improve prediction stability.</li>
+            <li>Designed a real-time alert mechanism that triggers continuous audio feedback when drowsiness persists for ≥3 seconds.</li>
+        </ul>
+        <div class="link-group">
+            <a href="https://github.com/faizanlkhan/Real-Time-Driver-Drowsiness-Detection-System" target="_blank">[Source Code]</a>
+        </div>
+
+        <h3>Fake News Detection using NLP with Feature-Based Interpretability</h3>
+        <ul>
+            <li>Developed an NLP-based classification system using TF-IDF and Logistic Regression on ~45,000 news articles, covering preprocessing, feature extraction, and evaluation.</li>
+            <li>Achieved ~98.7% accuracy (validated on held-out test data) with balanced precision and recall.</li>
+            <li>Evaluated model performance against a Multinomial Naive Bayes baseline, with Logistic Regression achieving higher accuracy due to better feature weighting.</li>
+            <li>Analyzed model coefficients to identify high-impact words influencing predictions and understand class-specific patterns.</li>
+            <li>Examined model limitations, identifying reliance on stylistic patterns and reduced performance on short or context-limited inputs.</li>
+        </ul>
+        <div class="link-group">
+            <a href="https://github.com/faizanlkhan/Fake-News-Detection-with-Explainability" target="_blank">[Source Code]</a>
+        </div>
         
         <h3>TerraVision - Terrain Analysis Platform (Anveshan 2024 Hackathon)</h3>
-        <p>Built a SaaS platform for terrain analysis & visualization using GeoTIFF files, featuring 2D/3D elevation maps, erosion risk mapping, and contour generation. Selected among top 5 university teams for South Zone (Bengaluru).</p>
+        <ul>
+            <li>Built a SaaS platform for terrain analysis & visualization using GeoTIFF data.</li>
+            <li>Conducted lunar landing-site simulation using Chandrayaan-1 & 2 TMC data (Python, NumPy, Matplotlib).</li>
+            <li>Implemented 2D/3D elevation mapping, erosion risk analysis, and contour generation.</li>
+            <li>Selected among Top 5 university teams in the South Zone (Bengaluru).</li>
+        </ul>
+        <div class="link-group">
+            <a href="https://github.com/faizanlkhan/TerraVision-Terrain-Analysis-Platform" target="_blank">[Source Code]</a>
+        </div>
         
         <h3>Land Registry on Blockchain (InnovateX 3.0 Hackathon)</h3>
-        <p>Developed a decentralized land registry MVP using a smart contract deployed on the Sepolia testnet, ensuring secure land ownership with integrated KYC and NFT ownership transfer.</p>
+        <ul>
+            <li>Developed a decentralized land registry MVP with KYC and NFT-based ownership transfer.</li>
+            <li>Smart contract deployed on Sepolia testnet with functional MetaMask login and NFT minting.</li>
+            <li>Built the front-end website for user interaction, including MetaMask login and NFT display.</li>
+        </ul>
         
         <h3>Terrain Analysis Tool (College Competition Project)</h3>
-        <p>Early version of TerraVision developed for a university-wide competition, achieving a Top 70 ranking out of 500 teams.</p>
+        <ul>
+            <li>Early prototype of TerraVision, ranked Top 70 out of 500 teams.</li>
+        </ul>
+        <div class="link-group">
+            <a href="https://github.com/faizanlkhan/TIFF-Based-2D-3D-Data-Visualizer" target="_blank">[Source Code]</a>
+        </div>
         <br>
         
         <h3>Mini Frontend Projects</h3>
@@ -201,12 +243,6 @@
             </li>
         </ul>
         <br>
-
-        <h3>ML Mini Projects</h3>
-        <ul>
-            <li>Image Classification (Cats vs Dogs)</li>
-            <li>House Price Prediction (Linear Regression)</li>
-        </ul>
         <hr>
     </section>
 
@@ -216,7 +252,7 @@
             <a href="https://www.linkedin.com/in/faizanlkhan" target="_blank">LinkedIn</a>
         </p>
         <p style="text-align: center; font-size: 0.8em; color: #555;">
-            &copy; 2025 Faizan L. Khan.
+            &copy; 2026 Faizan L. Khan.
         </p>
     </footer>
 
